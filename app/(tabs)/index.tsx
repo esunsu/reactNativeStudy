@@ -1,9 +1,10 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Button, TouchableOpacity, Text, StyleSheet, Platform } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { AntDesign } from '@expo/vector-icons';
 
 export default function HomeScreen() {
   return (
@@ -14,6 +15,19 @@ export default function HomeScreen() {
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
+
+        <Button
+            title="버튼"
+            onPress={() => alert('버튼이 눌렸습니다!')}
+            color="#007AFF"
+        />
+
+        <TouchableOpacity
+            onPress={() => alert('버튼이 눌렸습니다!')}>
+          <AntDesign name="pluscircleo" size={24} color="black" />
+        </TouchableOpacity>
+
+
         <ThemedText>
           Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
           Press{' '}
